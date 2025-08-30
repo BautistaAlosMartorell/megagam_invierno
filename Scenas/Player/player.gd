@@ -57,7 +57,7 @@ func RestarVida(damage:int):
 	if vida== 0:
 		queue_free()
 		pass 
-@onready var linterna = $PointLight2D
+@onready var linterna = $Node2D
 
 func _process(delta):
 	var mouse_pos = get_global_mouse_position()
