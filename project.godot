@@ -11,17 +11,6 @@ config_version=5
 [application]
 
 config/name="gamejam_invierno"
-
-config/features=PackedStringArray("4.4", "Forward Plus")
-
-[dotnet]
-
-project/assembly_name="gamejam_invierno"
-
-
-run/main_scene="res://Scenas/main.tscn"
-
-
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [display]
@@ -31,6 +20,12 @@ window/size/viewport_height=270
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="gamejam_invierno"
+run/main_scene="res://Scenas/main.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
 
 [input]
 
@@ -71,4 +66,3 @@ Pausa={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-
