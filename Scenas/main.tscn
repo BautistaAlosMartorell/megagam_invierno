@@ -11,9 +11,6 @@
 position = Vector2(25, 124)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(215, 11)
-limit_left = 0
-limit_top = -278
-limit_bottom = 270
-
-[node name="WorldBounds" type="Node" parent="."]
+position = Vector2(214, 9)
+limit_top = 0
+limit_bottom = 9
