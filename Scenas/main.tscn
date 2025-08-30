@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://hse861ccjo3t"]
+
+[ext_resource type="PackedScene" uid="uid://b6g0exhaar6ye" path="res://Scenas/background.tscn" id="1_ue5qb"]
+[ext_resource type="PackedScene" uid="uid://citkokw2rkjav" path="res://Scenas/Player/player.tscn" id="2_urld1"]
+[ext_resource type="PackedScene" uid="uid://dgp8uiqqqajrq" path="res://Scenas/Kraken/kraken.tscn" id="3_urld1"]
+[ext_resource type="PackedScene" uid="uid://cdkahws0fyn24" path="res://PlayerTest/OxygenComponent.tscn" id="4_1gl61"]
+[ext_resource type="Texture2D" uid="uid://drsw5riynd1up" path="res://assets/img/background/plx-1.png" id="4_an1xy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1gl61"]
+blend_mode = 1
+
+[node name="main" type="Node"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+top_level = true
+color = Color(0, 0, 0, 0.588235)
+
+[node name="background" parent="." instance=ExtResource("1_ue5qb")]
+
+[node name="Player" parent="." instance=ExtResource("2_urld1")]
+position = Vector2(84, 120)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(156, 15)
+limit_top = 0
+limit_bottom = 9
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player"]
+material = SubResource("CanvasItemMaterial_1gl61")
+position = Vector2(493, -173)
+texture = ExtResource("4_an1xy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="OxygenComponent" parent="Player/CanvasLayer" instance=ExtResource("4_1gl61")]
+
+[node name="Kraken" parent="." instance=ExtResource("3_urld1")]
+position = Vector2(0, 1)

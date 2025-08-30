@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdkahws0fyn24"]
+
+[ext_resource type="PackedScene" uid="uid://mcb7g43e6pc5" path="res://PlayerTest/Oxygen/OxygenBar.tscn" id="1_w6ba8"]
+[ext_resource type="Script" uid="uid://k0a6230ic68c" path="res://PlayerTest/Oxygen/OxygenSystem.gd" id="2_w5quw"]
+
+[node name="OxygenComponent" type="Node" node_paths=PackedStringArray("oxygen_Bar")]
+script = ExtResource("2_w5quw")
+oxygen_Bar = NodePath("OxygenBar")
+
+[node name="OxygenTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="OxygenBar" parent="." instance=ExtResource("1_w6ba8")]
+offset_left = 321.0
+offset_top = 1.0
+offset_right = 469.0
+offset_bottom = 24.0
+fill_mode = 0
+
+[connection signal="timeout" from="OxygenTimer" to="." method="_on_oxygen_timer_timeout"]
