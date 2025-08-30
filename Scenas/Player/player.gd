@@ -1,9 +1,13 @@
 extends CharacterBody2D
 
-
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
+
 var vida:int = 1
+
+const TOP_Y := 37.0    # techo visible
+const BOTTOM_Y := 235.0  # piso visible
+
 
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -19,6 +23,11 @@ func _physics_process(_delta: float) -> void:
 		
 	move_and_slide()
 	Decidir_Animaciones()
+	global_position.y = clamp(global_position.y, TOP_Y, BOTTOM_Y)
+	if global_position.y <= TOP_Y and velocity.y < 0.0:
+		velocity.y = 0.0
+	if global_position.y >= BOTTOM_Y and velocity.y > 0.0:
+		velocity.y = 0.0
 
 func Decidir_Animaciones():
 	if velocity.x == 0: 
