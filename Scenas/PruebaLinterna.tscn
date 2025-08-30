@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnbamhv63edgk"]
+[gd_scene load_steps=3 format=3 uid="uid://n8jl5rmthdr0"]
 
 [ext_resource type="PackedScene" uid="uid://citkokw2rkjav" path="res://Scenas/Player/player.tscn" id="1_7b44l"]
 [ext_resource type="Texture2D" uid="uid://drsw5riynd1up" path="res://assets/img/background/plx-1.png" id="2_f208i"]
