@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://mcb7g43e6pc5"]
+
+[ext_resource type="Script" uid="uid://psi5hip71bmo" path="res://PlayerTest/Oxygen/oxygen_bar.gd" id="1_4rkds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qkh4"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rkds"]
+bg_color = Color(0.274396, 0.64661, 0.816188, 1)
+
+[node name="ProgressBar" type="ProgressBar"]
+offset_right = 190.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8qkh4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4rkds")
+max_value = 1.0
+value = 1.0
+fill_mode = 1
+script = ExtResource("1_4rkds")
