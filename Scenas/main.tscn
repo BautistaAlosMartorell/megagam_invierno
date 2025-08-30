@@ -12,12 +12,14 @@ blend_mode = 1
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 top_level = true
 color = Color(0, 0, 0, 0.588235)
 
 [node name="background" parent="." instance=ExtResource("1_ue5qb")]
 
 [node name="Player" parent="." instance=ExtResource("2_urld1")]
+visible = false
 position = Vector2(84, 120)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -35,4 +37,5 @@ texture = ExtResource("4_an1xy")
 [node name="OxygenComponent" parent="Player/CanvasLayer" instance=ExtResource("4_1gl61")]
 
 [node name="Kraken" parent="." instance=ExtResource("3_urld1")]
+z_index = 12
 position = Vector2(0, 1)
