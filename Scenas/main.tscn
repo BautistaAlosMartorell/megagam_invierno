@@ -12,14 +12,12 @@ blend_mode = 1
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 top_level = true
 color = Color(0, 0, 0, 0.588235)
 
 [node name="background" parent="." instance=ExtResource("1_ue5qb")]
 
 [node name="Player" parent="." instance=ExtResource("2_urld1")]
-visible = false
 position = Vector2(84, 120)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
