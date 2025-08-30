@@ -1,10 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dgp8uiqqqajrq"]
+[gd_scene load_steps=32 format=3 uid="uid://dgp8uiqqqajrq"]
 
 [ext_resource type="Script" uid="uid://bthnd3h11siqa" path="res://Scenas/Kraken/kraken.gd" id="1_v1dx3"]
 [ext_resource type="Texture2D" uid="uid://dcrjij5i6k3d0" path="res://SpriteMomentaneos/krakensprite sheet.png" id="2_g03kg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g03kg"]
-size = Vector2(48.5, 270)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tco6r"]
 atlas = ExtResource("2_g03kg")
@@ -45,6 +42,26 @@ region = Rect2(9360, 0, 1170, 658)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3r84y"]
 atlas = ExtResource("2_g03kg")
 region = Rect2(10530, 0, 1170, 658)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3crt3"]
+atlas = ExtResource("2_g03kg")
+region = Rect2(25740, 0, 1170, 658)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33qnf"]
+atlas = ExtResource("2_g03kg")
+region = Rect2(26910, 0, 1170, 658)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yggdf"]
+atlas = ExtResource("2_g03kg")
+region = Rect2(29250, 0, 1170, 658)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uest0"]
+atlas = ExtResource("2_g03kg")
+region = Rect2(30420, 0, 1170, 658)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd4hb"]
+atlas = ExtResource("2_g03kg")
+region = Rect2(31590, 0, 1170, 658)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7e41"]
 atlas = ExtResource("2_g03kg")
@@ -94,30 +111,6 @@ region = Rect2(23400, 0, 1170, 658)
 atlas = ExtResource("2_g03kg")
 region = Rect2(24570, 0, 1170, 658)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3crt3"]
-atlas = ExtResource("2_g03kg")
-region = Rect2(25740, 0, 1170, 658)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_33qnf"]
-atlas = ExtResource("2_g03kg")
-region = Rect2(26910, 0, 1170, 658)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ivk40"]
-atlas = ExtResource("2_g03kg")
-region = Rect2(28080, 0, 1170, 658)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yggdf"]
-atlas = ExtResource("2_g03kg")
-region = Rect2(29250, 0, 1170, 658)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uest0"]
-atlas = ExtResource("2_g03kg")
-region = Rect2(30420, 0, 1170, 658)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pd4hb"]
-atlas = ExtResource("2_g03kg")
-region = Rect2(31590, 0, 1170, 658)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_n36cv"]
 animations = [{
 "frames": [{
@@ -150,6 +143,21 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3r84y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3crt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33qnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yggdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uest0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd4hb")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e7e41")
@@ -186,41 +194,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ykovw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3crt3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_33qnf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ivk40")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yggdf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uest0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pd4hb")
 }],
 "loop": true,
 "name": &"Run",
-"speed": 20.0
+"speed": 12.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g03kg"]
+size = Vector2(48.5, 270)
 
 [node name="Kraken" type="CharacterBody2D"]
 script = ExtResource("1_v1dx3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24.25, 135)
-shape = SubResource("RectangleShape2D_g03kg")
+speed = 150.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-32, 134)
 scale = Vector2(0.406535, 0.406535)
 sprite_frames = SubResource("SpriteFrames_n36cv")
 animation = &"Run"
-frame_progress = 0.952218
-speed_scale = 1.2
+autoplay = "Run"
+frame_progress = 0.871218
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24.25, 135)
+shape = SubResource("RectangleShape2D_g03kg")
