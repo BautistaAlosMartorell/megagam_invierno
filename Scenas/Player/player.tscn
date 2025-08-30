@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://citkokw2rkjav"]
+[gd_scene load_steps=33 format=3 uid="uid://citkokw2rkjav"]
 
 [ext_resource type="Script" uid="uid://bkk7k1rg8a648" path="res://Scenas/Player/player.gd" id="1_xadjt"]
 [ext_resource type="Texture2D" uid="uid://dqyp8dt2jqbw4" path="res://SpriteMomentaneos/IDLE.png" id="2_qvi3k"]
 [ext_resource type="Texture2D" uid="uid://dwv47jbpxrgal" path="res://SpriteMomentaneos/RUN.png" id="3_qvi3k"]
+[ext_resource type="Texture2D" uid="uid://ctrv0as5uur8a" path="res://assets/Linterna/TexturaLinterna.png" id="4_85tje"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd8k4"]
 atlas = ExtResource("2_qvi3k")
@@ -212,3 +213,9 @@ animation = &"Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_5cvsc")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(8, 17)
+energy = 3.13
+range_z_max = 299
+texture = ExtResource("4_85tje")
