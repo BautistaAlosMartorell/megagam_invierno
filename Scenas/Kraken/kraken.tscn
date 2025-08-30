@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgp8uiqqqajrq"]
+
+[ext_resource type="Script" uid="uid://bthnd3h11siqa" path="res://Scenas/Kraken/kraken.gd" id="1_v1dx3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g03kg"]
+size = Vector2(45, 270)
+
+[node name="Kraken" type="CharacterBody2D"]
+script = ExtResource("1_v1dx3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(22.5, 135)
+shape = SubResource("RectangleShape2D_g03kg")
