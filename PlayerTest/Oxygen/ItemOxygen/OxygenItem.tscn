@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5hrdnaodvpsv"]
+
+[ext_resource type="Script" uid="uid://dl1agfyd7vo57" path="res://PlayerTest/Oxygen/ItemOxygen/OxygenItem.gd" id="1_wbyyh"]
+[ext_resource type="Texture2D" uid="uid://cx2xd51w4c6e0" path="res://PlayerTest/Oxygen/ItemOxygen/Asset 21.png" id="2_h4p4k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uql8j"]
+
+[node name="OxygenItem" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_wbyyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_uql8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(5.96046e-08, -1.19209e-07)
+scale = Vector2(0.0489511, 0.0489511)
+texture = ExtResource("2_h4p4k")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
