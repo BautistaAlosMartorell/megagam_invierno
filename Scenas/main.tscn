@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://hse861ccjo3t"]
+[gd_scene load_steps=8 format=3 uid="uid://hse861ccjo3t"]
 
 [ext_resource type="PackedScene" uid="uid://b6g0exhaar6ye" path="res://Scenas/background.tscn" id="1_ue5qb"]
 [ext_resource type="PackedScene" uid="uid://citkokw2rkjav" path="res://Scenas/Player/player.tscn" id="2_urld1"]
 [ext_resource type="PackedScene" uid="uid://dgp8uiqqqajrq" path="res://Scenas/Kraken/kraken.tscn" id="3_urld1"]
 [ext_resource type="PackedScene" uid="uid://cdkahws0fyn24" path="res://PlayerTest/OxygenComponent.tscn" id="4_1gl61"]
 [ext_resource type="Texture2D" uid="uid://drsw5riynd1up" path="res://assets/img/background/plx-1.png" id="4_an1xy"]
+[ext_resource type="PackedScene" uid="uid://cuqciq6eh3ysg" path="res://PlayerTest/Oxygen/oxygenGenerator/oxygen_generator.tscn" id="6_s1m4t"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1gl61"]
 blend_mode = 1
@@ -36,3 +37,8 @@ texture = ExtResource("4_an1xy")
 
 [node name="Kraken" parent="." instance=ExtResource("3_urld1")]
 position = Vector2(0, 1)
+
+[node name="OxygenGenerator" parent="." instance=ExtResource("6_s1m4t")]
+player_path = NodePath("../Player")
+spawn_area_size = Vector2(250, 250)
+spawn_offset = Vector2(200, 0)
