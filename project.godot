@@ -12,6 +12,13 @@ config_version=5
 
 config/name="gamejam_invierno"
 
+config/features=PackedStringArray("4.4", "Forward Plus")
+
+[dotnet]
+
+project/assembly_name="gamejam_invierno"
+
+
 run/main_scene="res://Scenas/main.tscn"
 
 
@@ -59,3 +66,4 @@ ui_down={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
