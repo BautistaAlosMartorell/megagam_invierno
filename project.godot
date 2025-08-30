@@ -11,4 +11,9 @@ config_version=5
 [application]
 
 config/name="gamejam_invierno"
+run/main_scene="uid://cmvq5adh21x63"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[dotnet]
+
+project/assembly_name="gamejam_invierno"

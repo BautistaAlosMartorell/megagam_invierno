@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmvq5adh21x63"]
+
+[ext_resource type="Script" uid="uid://becc18wlsmcji" path="res://UI-Scenes/main_menu.gd" id="1_ya61g"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edvga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edvga"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya61g"]
+bg_color = Color(0.226708, 0.226707, 0.226707, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q4q5"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edvga"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ScMainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ya61g")
+
+[node name="PNL_Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_edvga")
+
+[node name="BT_Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -174.0
+offset_right = 136.0
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
+text = "PLAY"
+icon_alignment = 1
+
+[node name="BT_Options" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -56.5
+offset_right = 136.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
+text = "OPTIONS"
+icon_alignment = 1
+
+[node name="BT_Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 62.0
+offset_right = 136.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
+text = "EXIT
+"
+icon_alignment = 1
+
+[node name="TXTR_Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -278.0
+offset_right = 137.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="BT_Play" to="." method="_on_bt_play_pressed"]
+[connection signal="pressed" from="BT_Options" to="." method="_on_bt_options_pressed"]
+[connection signal="pressed" from="BT_Exit" to="." method="_on_bt_exit_pressed"]
