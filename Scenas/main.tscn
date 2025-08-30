@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://hse861ccjo3t"]
+
+[ext_resource type="PackedScene" uid="uid://b6g0exhaar6ye" path="res://Scenas/background.tscn" id="1_ue5qb"]
+[ext_resource type="PackedScene" uid="uid://citkokw2rkjav" path="res://Scenas/Player/player.tscn" id="2_urld1"]
+
+[node name="main" type="Node"]
+
+[node name="background" parent="." instance=ExtResource("1_ue5qb")]
+
+[node name="Player" parent="." instance=ExtResource("2_urld1")]
+position = Vector2(25, 124)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(215, 11)
+limit_left = 0
+limit_top = -278
+limit_bottom = 270
+
+[node name="WorldBounds" type="Node" parent="."]
