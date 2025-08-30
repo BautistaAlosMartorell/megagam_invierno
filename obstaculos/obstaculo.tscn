@@ -9,26 +9,31 @@
 position = Vector2(1, 1)
 
 [node name="Collisionabajo2" type="CollisionPolygon2D" parent="Area_colision"]
-position = Vector2(-5.67936, -32.4391)
-scale = Vector2(1.05871, 1.04418)
-polygon = PackedVector2Array(-56.9756, 678.465, 12, 410, 60.1481, 680.38)
+position = Vector2(12.4091, -95.0086)
+scale = Vector2(1.25508, 1.23443)
+polygon = PackedVector2Array(-56.9756, 678.465, 12.4222, 423.685, 60.1481, 680.38)
 
 [node name="Collision_ariba2" type="CollisionPolygon2D" parent="Area_colision"]
-position = Vector2(-4.08234, 0.883568)
-scale = Vector2(1.03922, 1.01905)
+position = Vector2(34.4851, -105.723)
+scale = Vector2(1.4951, 1.40827)
 polygon = PackedVector2Array(-54, -29, 9, 204, 48, -29)
 
 [node name="imagen2" type="Sprite2D" parent="."]
-position = Vector2(-3, 88)
+position = Vector2(30, 10.5)
+scale = Vector2(1.61111, 1.41004)
 texture = ExtResource("2_g6u40")
 
 [node name="Collision_ariba" type="CollisionPolygon2D" parent="imagen2"]
-position = Vector2(3, -88)
-polygon = PackedVector2Array(-54, -29, 9, 204, 48, -29)
+position = Vector2(3, -87.7249)
+scale = Vector2(1, 1.00295)
+polygon = PackedVector2Array(-54, -29, 10.6552, 208.03, 48, -29)
 
 [node name="imagen" type="Sprite2D" parent="."]
-position = Vector2(0, 527)
+position = Vector2(16, 596.5)
+scale = Vector2(1.2963, 1.26778)
 texture = ExtResource("1_n17jo")
 
 [node name="Collisionabajo" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-49, 641, 12, 410, 50, 642)
+position = Vector2(18.0354, -112.244)
+scale = Vector2(1.22917, 1.32974)
+polygon = PackedVector2Array(-49, 641, 10.5475, 403.269, 50, 642)
