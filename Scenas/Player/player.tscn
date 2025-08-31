@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cttbdyqn2rm08" path="res://Buzo/buzo3.png" id="2_yn75r"]
 [ext_resource type="Texture2D" uid="uid://1pcmrwdjrpcx" path="res://Buzo/buzo1.png" id="3_l580j"]
 [ext_resource type="Texture2D" uid="uid://bunnqt45c85kf" path="res://Buzo/sprite_sheet (1).png" id="3_yn75r"]
-[ext_resource type="Texture2D" uid="uid://bjwq7rup4kgme" path="res://assets/Linterna/Flashlight texture.jpg" id="4_85tje"]
 [ext_resource type="Texture2D" uid="uid://c0y0tcmp00vl0" path="res://assets/Linterna/xd.webp" id="4_l580j"]
 [ext_resource type="Texture2D" uid="uid://brmrlp34ekx38" path="res://Buzo/buzo2_0 (1).png" id="4_yn75r"]
+[ext_resource type="Texture2D" uid="uid://dyafib6p3mnm4" path="res://assets/Linterna/Light-Transparent-Image.png" id="6_yn75r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbt53"]
 atlas = ExtResource("2_yn75r")
@@ -621,14 +621,15 @@ shape = SubResource("RectangleShape2D_5cvsc")
 position = Vector2(3, 17)
 
 [node name="PointLight2D" type="PointLight2D" parent="Pivot"]
-position = Vector2(286, 35)
-rotation = -1.5708
+position = Vector2(224.371, 123.971)
+rotation = 3.14159
+scale = Vector2(0.303054, 0.27188)
 color = Color(0.42744, 0.553143, 0.646168, 1)
 energy = 2.0
 range_z_min = -4096
 range_z_max = 4096
 range_item_cull_mask = 3
-texture = ExtResource("4_85tje")
+texture = ExtResource("6_yn75r")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, 16.46)
