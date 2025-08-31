@@ -4,20 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://cx2xd51w4c6e0" path="res://PlayerTest/Oxygen/ItemOxygen/Asset 21.png" id="2_h4p4k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uql8j"]
+radius = 11.0
+height = 36.0
 
-[node name="OxygenItem" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="OxygenItem" type="Area2D"]
 script = ExtResource("1_wbyyh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_uql8j")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5.96046e-08, -1.19209e-07)
 scale = Vector2(0.0489511, 0.0489511)
 texture = ExtResource("2_h4p4k")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
