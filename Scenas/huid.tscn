@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cpcwcpl6alokl"]
+
+[node name="HUID" type="CanvasLayer"]
+
+[node name="score_label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "SCORE:"
+
+[node name="high_label" type="Label" parent="."]
+offset_top = 29.0
+offset_right = 100.0
+offset_bottom = 52.0
+text = "HIGH SCORE:"
