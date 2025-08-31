@@ -107,4 +107,4 @@ func _on_animation_changed():
 	pass # Replace with function body.
 func _on_animation_finished():
 	if sprite.animation== "Muerte":
-		$"../CanvasLayer".show_game_over(false)
+		$"../Perder_ganar".show_game_over(false)
