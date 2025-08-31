@@ -5,12 +5,9 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-top_level = true
-color = Color(0, 0, 0, 0.588235)
-
 [node name="Player" parent="." instance=ExtResource("1_7b44l")]
 position = Vector2(55, 157)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.368611, 0.461827, 0.555626, 1)
 texture = ExtResource("2_f208i")

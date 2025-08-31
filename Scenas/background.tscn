@@ -1,21 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6g0exhaar6ye"]
+[gd_scene load_steps=2 format=3 uid="uid://dxp430o88m6tf"]
 
-[ext_resource type="Texture2D" uid="uid://drsw5riynd1up" path="res://assets/img/background/plx-1.png" id="1_4xl8w"]
-[ext_resource type="Texture2D" uid="uid://d28nkfvtf7j7p" path="res://assets/img/background/plx-2.png" id="2_egfpp"]
+[ext_resource type="Texture2D" uid="uid://bhdn28umqddvk" path="res://Buzo/megafondo2025.jpg" id="2_4xl8w"]
 
 [node name="background" type="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.416667, 0.41358)
-texture = ExtResource("1_4xl8w")
-centered = false
+layer = -2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+light_mask = 1023
 motion_scale = Vector2(0.6, 0.6)
-motion_mirroring = Vector2(480, 0)
+motion_mirroring = Vector2(2890, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(0, 3.55271e-15)
-scale = Vector2(0.418403, 0.419753)
-texture = ExtResource("2_egfpp")
+show_behind_parent = true
+light_mask = 1023
+visibility_layer = 1023
+position = Vector2(0, 1)
+scale = Vector2(0.371333, 0.372531)
+texture = ExtResource("2_4xl8w")
 centered = false
