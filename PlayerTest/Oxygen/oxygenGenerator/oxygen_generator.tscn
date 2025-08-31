@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuqciq6eh3ysg"]
+
+[ext_resource type="Script" uid="uid://c1shed3t6u4dk" path="res://PlayerTest/Oxygen/oxygenGenerator/oxygen_generator.gd" id="1_6emq6"]
+[ext_resource type="PackedScene" uid="uid://b5hrdnaodvpsv" path="res://PlayerTest/Oxygen/ItemOxygen/OxygenItem.tscn" id="2_qy6ak"]
+
+[node name="OxygenGenerator" type="Node2D"]
+script = ExtResource("1_6emq6")
+oxygen_item_scene = ExtResource("2_qy6ak")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
