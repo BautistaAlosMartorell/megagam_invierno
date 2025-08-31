@@ -1,0 +1,321 @@
+[gd_scene load_steps=18 format=3 uid="uid://bjkve75p5fdn"]
+
+[ext_resource type="Script" uid="uid://juxu2s8s65h0" path="res://UI-Scenes/options_menu.gd" id="1_avk1d"]
+[ext_resource type="Texture2D" uid="uid://bd22gt6461sfn" path="res://UI-Scenes/Assets/keyboard_w.png" id="2_ng77g"]
+[ext_resource type="Texture2D" uid="uid://7vx35x4haeho" path="res://UI-Scenes/Assets/keyboard_a.png" id="3_lpjlv"]
+[ext_resource type="Texture2D" uid="uid://de3j65xm520gf" path="res://UI-Scenes/Assets/keyboard_s.png" id="4_lyqtk"]
+[ext_resource type="Texture2D" uid="uid://crblfh6xvjuw7" path="res://UI-Scenes/Assets/keyboard_d.png" id="5_dbtvv"]
+[ext_resource type="Texture2D" uid="uid://vxpvbh32ulgj" path="res://UI-Scenes/Assets/mouse_move.png" id="6_785rg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7jv4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_044lh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6u8s4"]
+texture = ExtResource("2_ng77g")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akea0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of66w"]
+texture = ExtResource("3_lpjlv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqryd"]
+texture = ExtResource("4_lyqtk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7wy"]
+texture = ExtResource("5_dbtvv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbbbw"]
+texture = ExtResource("6_785rg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e752d"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muvsy"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82ti5"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Opciones" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_avk1d")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_c7jv4")
+tab_alignment = 1
+current_tab = 0
+
+[node name="Sound" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="VolumeValue" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "50%"
+horizontal_alignment = 1
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.767196
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Controls/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 3
+
+[node name="Panel5" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_044lh")
+
+[node name="Panel" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6u8s4")
+
+[node name="Panel6" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_akea0")
+
+[node name="Panel2" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_of66w")
+
+[node name="Panel3" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rqryd")
+
+[node name="Panel4" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ui7wy")
+
+[node name="GridContainer2" type="GridContainer" parent="TabContainer/Controls/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 3
+
+[node name="Panel8" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_044lh")
+
+[node name="Panel7" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nbbbw")
+
+[node name="Panel9" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_044lh")
+
+[node name="Credits" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Credits/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Credits/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TitleArtists" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "ARTISTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Credits/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TitleMusicians" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "MUSICIANS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Credits/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TitleProgrammers" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "PROGRAMMERS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="TabContainer/Credits/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = 200.0
+offset_right = -368.0
+offset_bottom = -39.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_e752d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_muvsy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_82ti5")
+text = "BACK"

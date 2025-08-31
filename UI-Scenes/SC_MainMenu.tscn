@@ -1,43 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmvq5adh21x63"]
+[gd_scene load_steps=8 format=3 uid="uid://df716dlxdkyxv"]
 
-[ext_resource type="Script" uid="uid://becc18wlsmcji" path="res://UI-Scenes/main_menu.gd" id="1_ya61g"]
-[ext_resource type="Texture2D" uid="uid://c4ji8lj17vvdo" path="res://assets/img/background/mainMenuBackground.jpg" id="2_8q4q5"]
+[ext_resource type="Texture2D" uid="uid://bepnwrrmdhsow" path="res://UI-Scenes/Assets/MainMenuBackground.png" id="1_0yblb"]
+[ext_resource type="Script" uid="uid://bvfm2yh0nwbcw" path="res://UI-Scenes/sc_main_menu.gd" id="1_xgrc3"]
+[ext_resource type="Texture2D" uid="uid://c8nl5mg0bp0v0" path="res://UI-Scenes/Assets/Mines.png" id="2_xgrc3"]
+[ext_resource type="Texture2D" uid="uid://dqetlitpu5rfv" path="res://UI-Scenes/Assets/Submarine.png" id="3_w2i6h"]
+[ext_resource type="Texture2D" uid="uid://boyqd7hw27ang" path="res://UI-Scenes/Assets/TextMainMenu.png" id="4_7qn2u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edvga"]
-texture = ExtResource("2_8q4q5")
-modulate_color = Color(0.473976, 0.473976, 0.473976, 1)
+texture = ExtResource("1_0yblb")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edvga"]
+[sub_resource type="Theme" id="Theme_1vwat"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya61g"]
-bg_color = Color(0.226708, 0.226707, 0.226707, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q4q5"]
-bg_color = Color(0.144063, 0.144063, 0.144062, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edvga"]
-bg_color = Color(0.176419, 0.176419, 0.176419, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[node name="ScMainMenu" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ya61g")
+script = ExtResource("1_xgrc3")
 
 [node name="PNL_Background" type="Panel" parent="."]
 layout_mode = 1
@@ -46,68 +27,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00012, 0.999907)
 theme_override_styles/panel = SubResource("StyleBoxTexture_edvga")
 
-[node name="TXTR_Logo" type="TextureRect" parent="."]
+[node name="Mines" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.0
-offset_top = -278.0
-offset_right = 137.0
-offset_bottom = -186.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 5294.0
+offset_bottom = 2960.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.0831421, 0.0835824)
+theme = SubResource("Theme_1vwat")
+texture = ExtResource("2_xgrc3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -135.0
-offset_right = 75.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 10
+[node name="Submarine" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 5334.0
+offset_bottom = 3000.0
+scale = Vector2(0.0899913, 0.0899865)
+texture = ExtResource("3_w2i6h")
 
-[node name="BT_Play" type="Button" parent="VBoxContainer"]
+[node name="TextTitles" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.0900005, 0.0900031)
+texture = ExtResource("4_7qn2u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 134.0
+offset_right = 353.0
+offset_bottom = 174.0
+scale = Vector2(1.30389, 0.889065)
+theme_override_constants/separation = 32
+
+[node name="BtnOptions" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
-text = "PLAY"
-icon_alignment = 1
+mouse_default_cursor_shape = 2
+flat = true
 
-[node name="BT_Options" type="Button" parent="VBoxContainer"]
+[node name="BtnPlay" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
-text = "OPTIONS"
-icon_alignment = 1
+mouse_default_cursor_shape = 2
+flat = true
 
-[node name="BT_Exit" type="Button" parent="VBoxContainer"]
+[node name="BtnExit" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
-text = "EXIT
-"
-icon_alignment = 1
+mouse_default_cursor_shape = 2
+flat = true
 
-[connection signal="pressed" from="VBoxContainer/BT_Play" to="." method="_on_bt_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/BT_Options" to="." method="_on_bt_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/BT_Exit" to="." method="_on_bt_exit_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnOptions" to="." method="_on_bt_options_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnPlay" to="." method="_on_bt_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnExit" to="." method="_on_bt_exit_pressed"]

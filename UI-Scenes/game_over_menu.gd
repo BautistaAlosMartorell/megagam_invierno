@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var restart_button = $VBoxContainer/RestartButton
 @onready var main_menu_button = $VBoxContainer/MainMenuButton
@@ -8,17 +8,11 @@ extends Control
 var is_win: bool = false
 
 func _ready():
-	# Connect button signals
-	restart_button.pressed.connect(_on_restart_button_pressed)
-	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
-	exit_button.pressed.connect(_on_exit_button_pressed)
-	
-	# Hide the menu initially
 	hide()
 
 func show_game_over(win: bool):
 	is_win = win
-	
+	get_tree().paused=true
 	if win:
 		result_label.text = "YOU WIN!"
 		result_label.modulate = Color.GREEN
@@ -29,16 +23,18 @@ func show_game_over(win: bool):
 	show()
 
 func _on_restart_button_pressed():
+	get_tree().paused=false
 	# Hide the menu
 	hide()
-	
 	# Restart the current scene
 	get_tree().reload_current_scene()
 
 func _on_main_menu_button_pressed():
+	
 	# Change to main menu scene
 	get_tree().change_scene_to_file("res://UI-Scenes/SC_MainMenu.tscn")
 
 func _on_exit_button_pressed():
+	get_tree().paused=false
 	# Quit the game
 	get_tree().quit()

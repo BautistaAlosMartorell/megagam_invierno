@@ -1,10 +1,11 @@
-extends Control
+extends CanvasLayer
 
-@onready var volume_slider = $VBoxContainer/VolumeContainer/VolumeSlider
-@onready var volume_value = $VBoxContainer/VolumeContainer/VolumeValue
-@onready var back_button = $VBoxContainer/BackButton
+@onready var volume_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/VolumeSlider
+@onready var volume_value = $TabContainer/Sound/MarginContainer/VBoxContainer/VolumeValue
+@onready var back_button = $BackButton
 
 func _ready():
+	hide()
 	# Load saved volume setting
 	var config = ConfigFile.new()
 	var saved_volume = 0.5  # Default volume
@@ -35,7 +36,7 @@ func _on_volume_slider_changed(value: float):
 func _on_back_button_pressed():
 	# Hide this menu and return to previous menu
 	hide()
-	
+	$"../Pausa".show()
 	# If we came from pause menu, show it again
 	# If we came from main menu, show it again
 	# This will be handled by the calling menu
