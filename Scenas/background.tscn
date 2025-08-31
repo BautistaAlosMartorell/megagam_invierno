@@ -1,20 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxp430o88m6tf"]
+[gd_scene load_steps=4 format=3 uid="uid://dxp430o88m6tf"]
 
+[ext_resource type="Shader" uid="uid://c56m6db4tc6sr" path="res://Scenas/background.gdshader" id="1_4xl8w"]
 [ext_resource type="Texture2D" uid="uid://bhdn28umqddvk" path="res://Buzo/megafondo2025.jpg" id="2_4xl8w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egfpp"]
+shader = ExtResource("1_4xl8w")
 
 [node name="background" type="ParallaxBackground"]
 layer = -2
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 light_mask = 1023
+visibility_layer = 3
 motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(2890, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.453232, 0.453232, 0.453232, 1)
 show_behind_parent = true
 light_mask = 1023
 visibility_layer = 1023
+material = SubResource("ShaderMaterial_egfpp")
 position = Vector2(0, 1)
 scale = Vector2(0.371333, 0.372531)
 texture = ExtResource("2_4xl8w")
 centered = false
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer/Sprite2D"]
+offset_right = 1298.0
+offset_bottom = 717.0
+color = Color(0.0823529, 0.0823529, 0.0823529, 0.258824)

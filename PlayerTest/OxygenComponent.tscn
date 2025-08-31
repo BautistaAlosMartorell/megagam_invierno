@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdkahws0fyn24"]
+[gd_scene load_steps=4 format=3 uid="uid://cdkahws0fyn24"]
 
 [ext_resource type="PackedScene" uid="uid://mcb7g43e6pc5" path="res://PlayerTest/Oxygen/OxygenBar.tscn" id="1_w6ba8"]
 [ext_resource type="Script" uid="uid://k0a6230ic68c" path="res://PlayerTest/Oxygen/OxygenSystem.gd" id="2_w5quw"]
+[ext_resource type="Texture2D" uid="uid://beu4jqx1gry5g" path="res://assets/img/tanque2.png" id="3_72tar"]
 
 [node name="OxygenComponent" type="Node" node_paths=PackedStringArray("oxygen_Bar")]
 script = ExtResource("2_w5quw")
@@ -12,10 +13,16 @@ wait_time = 5.0
 autostart = true
 
 [node name="OxygenBar" parent="." instance=ExtResource("1_w6ba8")]
-offset_left = 321.0
-offset_top = 1.0
-offset_right = 469.0
-offset_bottom = 24.0
+offset_left = 362.0
+offset_top = 20.0
+offset_right = 465.0
+offset_bottom = 43.0
 fill_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.417257, 0.417257, 0.417257, 1)
+position = Vector2(407.491, 30.6875)
+scale = Vector2(0.223383, 0.145893)
+texture = ExtResource("3_72tar")
 
 [connection signal="timeout" from="OxygenTimer" to="." method="_on_oxygen_timer_timeout"]
