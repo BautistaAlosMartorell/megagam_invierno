@@ -12,7 +12,7 @@ func _ready():
 
 func show_game_over(win: bool):
 	is_win = win
-	
+	get_tree().paused=true
 	if win:
 		result_label.text = "YOU WIN!"
 		result_label.modulate = Color.GREEN
@@ -30,7 +30,7 @@ func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
 
 func _on_main_menu_button_pressed():
-	get_tree().paused=false
+	
 	# Change to main menu scene
 	get_tree().change_scene_to_file("res://UI-Scenes/SC_MainMenu.tscn")
 
