@@ -16,7 +16,7 @@ motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(2890, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-modulate = Color(0.585062, 0.585062, 0.585062, 1)
+modulate = Color(0.243569, 0.243569, 0.243569, 1)
 show_behind_parent = true
 light_mask = 1023
 visibility_layer = 1023
