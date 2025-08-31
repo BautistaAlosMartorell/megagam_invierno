@@ -205,7 +205,7 @@ size = Vector2(48.5, 270)
 
 [node name="Kraken" type="CharacterBody2D"]
 script = ExtResource("1_v1dx3")
-speed = 150.0
+speed = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-32, 134)
@@ -218,3 +218,11 @@ frame_progress = 0.871218
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(24.25, 135)
 shape = SubResource("RectangleShape2D_g03kg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Area" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(24.25, 135)
+shape = SubResource("RectangleShape2D_g03kg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
