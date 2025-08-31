@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dtjs866wocqo" path="res://assets/img/rockDown.png" id="2_g6u40"]
 
 [node name="obstaculo" type="StaticBody2D"]
+position = Vector2(0, 46)
+scale = Vector2(0.3, 0.3)
 
 [node name="Area_colision" type="Area2D" parent="."]
 position = Vector2(1, 1)
