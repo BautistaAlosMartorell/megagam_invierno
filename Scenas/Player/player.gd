@@ -150,13 +150,12 @@ func Decidir_Animaciones():
 	elif velocity.x > 0: 
 		$Animaciones.flip_h = false	
 		$Animaciones.play("Run")
-	
 	if velocity.y < 0:
-		$Animaciones.flip_v = true	
 		$Animaciones.play("Run")
 	elif velocity.y > 0: 
-		$Animaciones.flip_v = false	
 		$Animaciones.play("Run")
+	if vida==0:
+		$Animaciones.play("Muerte")
 
 func RestarVida(damage: int):
 	if vida == 1:

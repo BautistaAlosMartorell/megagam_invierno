@@ -1,27 +1,20 @@
 
-[gd_scene load_steps=8 format=3 uid="uid://hse861ccjo3t"]
-
+[gd_scene load_steps=6 format=3 uid="uid://dxansfn1umllu"]
 
 
 [ext_resource type="PackedScene" uid="uid://dxp430o88m6tf" path="res://Scenas/background.tscn" id="1_ue5qb"]
 [ext_resource type="PackedScene" uid="uid://citkokw2rkjav" path="res://Scenas/Player/player.tscn" id="2_urld1"]
 [ext_resource type="PackedScene" uid="uid://dgp8uiqqqajrq" path="res://Scenas/Kraken/kraken.tscn" id="3_urld1"]
 [ext_resource type="PackedScene" uid="uid://cdkahws0fyn24" path="res://PlayerTest/OxygenComponent.tscn" id="4_1gl61"]
-[ext_resource type="Texture2D" uid="uid://drsw5riynd1up" path="res://assets/img/background/plx-1.png" id="4_an1xy"]
-
-[ext_resource type="Script" uid="uid://ramexka83el4" path="res://scripts/spawn_obstacles.gd" id="6_s1m4t"]
 
 [ext_resource type="PackedScene" uid="uid://cuqciq6eh3ysg" path="res://PlayerTest/Oxygen/oxygenGenerator/oxygen_generator.tscn" id="6_s1m4t"]
 
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1gl61"]
-blend_mode = 1
 
 [node name="main" type="Node"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 top_level = true
-color = Color(0, 0, 0, 0.588235)
+color = Color(0, 0, 0, 1)
 
 [node name="background" parent="." instance=ExtResource("1_ue5qb")]
 
@@ -32,11 +25,6 @@ position = Vector2(84, 120)
 position = Vector2(156, 15)
 limit_top = 0
 limit_bottom = 9
-
-[node name="Sprite2D2" type="Sprite2D" parent="Player"]
-material = SubResource("CanvasItemMaterial_1gl61")
-position = Vector2(493, -173)
-texture = ExtResource("4_an1xy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player"]
 
