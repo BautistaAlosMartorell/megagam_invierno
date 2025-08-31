@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdjl8jv4nul11"]
+[gd_scene load_steps=7 format=3 uid="uid://cdjl8jv4nul11"]
 
 [ext_resource type="Script" uid="uid://cwfi6j56r5w5w" path="res://UI-Scenes/game_over_menu.gd" id="1_frwrx"]
 
@@ -8,6 +8,8 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gylin"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frwrx"]
 bg_color = Color(0.144063, 0.144063, 0.144062, 1)
@@ -56,43 +58,47 @@ theme_override_font_sizes/font_size = 48
 text = "GAME OVER"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="RestartButton" type="Button" parent="VBoxContainer"]
+[node name="RestartButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(125, 35)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gylin")
 theme_override_styles/hover = SubResource("StyleBoxFlat_frwrx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0dclf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fsavm")
+action_mode = 0
 text = "RESTART"
+icon_alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="MainMenuButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(125, 35)
 layout_mode = 2
-
-[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gylin")
 theme_override_styles/hover = SubResource("StyleBoxFlat_frwrx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0dclf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fsavm")
+action_mode = 0
 text = "MAIN MENU"
+icon_alignment = 1
 
-[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+[node name="ExitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(125, 35)
 layout_mode = 2
-
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gylin")
 theme_override_styles/hover = SubResource("StyleBoxFlat_frwrx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0dclf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fsavm")
+action_mode = 0
 text = "EXIT"
 icon_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

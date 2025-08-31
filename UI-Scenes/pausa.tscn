@@ -1,25 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwgj21cpxqyfx"]
+[gd_scene load_steps=7 format=3 uid="uid://cwgj21cpxqyfx"]
 
 [ext_resource type="Script" uid="uid://dooi47lr85r5v" path="res://UI-Scenes/pausa.gd" id="1_8pynk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pynk"]
+bg_color = Color(0.226708, 0.226707, 0.226707, 0.95)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pynk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpw53"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt7gj"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07r2w"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Pausa" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_8pynk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
+[node name="Background" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-color = Color(0, 0, 0, 0.745098)
-metadata/_edit_group_ = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pynk")
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="."]
 clip_contents = true
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -32,8 +58,7 @@ theme_override_font_sizes/font_size = 41
 text = "Pause"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
-layout_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -42,23 +67,29 @@ anchor_bottom = 1.0
 offset_left = -67.0
 offset_top = -141.0
 offset_right = 67.0
+offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Continue" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8pynk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpw53")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bt7gj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_07r2w")
+action_mode = 0
 text = "Continue"
 
-[node name="Opciones" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "Options"
-
-[node name="Exit" type="Button" parent="ColorRect/VBoxContainer"]
-layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8pynk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dpw53")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bt7gj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_07r2w")
+action_mode = 0
 text = "Main Menu"
 
-[connection signal="pressed" from="ColorRect/VBoxContainer/Continue" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Opciones" to="." method="_on_opciones_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://bjkve75p5fdn"]
+[gd_scene load_steps=17 format=3 uid="uid://bjkve75p5fdn"]
 
 [ext_resource type="Script" uid="uid://juxu2s8s65h0" path="res://UI-Scenes/options_menu.gd" id="1_avk1d"]
 [ext_resource type="Texture2D" uid="uid://bd22gt6461sfn" path="res://UI-Scenes/Assets/keyboard_w.png" id="2_ng77g"]
-[ext_resource type="Texture2D" uid="uid://7vx35x4haeho" path="res://UI-Scenes/Assets/keyboard_a.png" id="3_lpjlv"]
 [ext_resource type="Texture2D" uid="uid://de3j65xm520gf" path="res://UI-Scenes/Assets/keyboard_s.png" id="4_lyqtk"]
-[ext_resource type="Texture2D" uid="uid://crblfh6xvjuw7" path="res://UI-Scenes/Assets/keyboard_d.png" id="5_dbtvv"]
+[ext_resource type="Texture2D" uid="uid://d3m86puhasndq" path="res://UI-Scenes/Assets/keyboard_shift_icon.png" id="5_j8bc1"]
 [ext_resource type="Texture2D" uid="uid://vxpvbh32ulgj" path="res://UI-Scenes/Assets/mouse_move.png" id="6_785rg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7jv4"]
@@ -16,17 +15,16 @@ texture = ExtResource("2_ng77g")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akea0"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_of66w"]
-texture = ExtResource("3_lpjlv")
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqryd"]
 texture = ExtResource("4_lyqtk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ui7wy"]
-texture = ExtResource("5_dbtvv")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_66mey"]
+texture = ExtResource("5_j8bc1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbbbw"]
 texture = ExtResource("6_785rg")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66mey"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e752d"]
 bg_color = Color(0.144063, 0.144063, 0.144062, 1)
@@ -148,26 +146,26 @@ custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_akea0")
 
-[node name="Panel2" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
+[node name="Panel7" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_of66w")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_akea0")
 
 [node name="Panel3" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_rqryd")
 
-[node name="Panel4" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_ui7wy")
-
 [node name="GridContainer2" type="GridContainer" parent="TabContainer/Controls/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-columns = 3
+columns = 6
+
+[node name="Panel10" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_66mey")
 
 [node name="Panel8" type="Panel" parent="TabContainer/Controls/MarginContainer/HBoxContainer/GridContainer2"]
 custom_minimum_size = Vector2(48, 48)
@@ -315,7 +313,9 @@ offset_top = 200.0
 offset_right = -368.0
 offset_bottom = -39.0
 theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_66mey")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e752d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_muvsy")
 theme_override_styles/normal = SubResource("StyleBoxFlat_82ti5")
+action_mode = 0
 text = "BACK"
