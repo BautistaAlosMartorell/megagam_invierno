@@ -1,8 +1,8 @@
 extends Control
 
-@onready var volume_slider = $VBoxContainer/VolumeContainer/VolumeSlider
-@onready var volume_value = $VBoxContainer/VolumeContainer/VolumeValue
-@onready var back_button = $VBoxContainer/BackButton
+@onready var volume_slider = $TabContainer/Sound/MarginContainer/VBoxContainer/VolumeSlider
+@onready var volume_value = $TabContainer/Sound/MarginContainer/VBoxContainer/VolumeValue
+@onready var back_button = $BackButton
 
 func _ready():
 	# Load saved volume setting
