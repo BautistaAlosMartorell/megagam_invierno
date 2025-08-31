@@ -18,7 +18,7 @@ func Use_Oxygen(amount : float):
 	
 	Check_Oxygen()
 	
-	if oxygen <= 0:
+	if oxygen == 0:
 		$"../..".RestarVida(1)
 
 func Check_Oxygen():

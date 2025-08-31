@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhdn28umqddvk"
-path="res://.godot/imported/megafondo2025.jpg-2b63c39cca665b3c7bd03548e72adce9.ctex"
+uid="uid://cttbdyqn2rm08"
+path="res://.godot/imported/buzo3.png-08e1872490cfacb53562294326d626ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Buzo/megafondo2025.jpg"
-dest_files=["res://.godot/imported/megafondo2025.jpg-2b63c39cca665b3c7bd03548e72adce9.ctex"]
+source_file="res://Buzo/buzo3.png"
+dest_files=["res://.godot/imported/buzo3.png-08e1872490cfacb53562294326d626ad.ctex"]
 
 [params]
 

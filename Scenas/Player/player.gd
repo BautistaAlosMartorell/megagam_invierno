@@ -4,7 +4,7 @@ const SPEED = 150.0
 var vida: int = 1
 # Dash
 var dash_speed: float = 300
-var dash_duration: float = 0.1
+var dash_duration: float = 0.5
 var dash_cooldown: float = 1
 
 var is_dashing: bool = false
@@ -16,7 +16,9 @@ const TOP_Y := 37.0    # techo visible
 const BOTTOM_Y := 235.0  # piso visible
 
 @onready var linterna = $Pivot
-
+func _ready() -> void:
+	add_to_group("Player")
+	sprite.animation_changed.connect(_on_animation_changed)
 func _physics_process(delta: float) -> void:
 	# Movimiento y dash
 	if is_dashing:
@@ -70,16 +72,38 @@ func Decidir_Animaciones():
 		$Animaciones.play("Run")
 	elif velocity.y > 0: 
 		$Animaciones.play("Run")
-	if vida==0:
-		$Animaciones.play("Muerte")
+	elif is_dashing==true:
+		$Animaciones.speed_scale=dash_duration
+		$Animaciones.play("Dash")
+
 
 func RestarVida(damage: int):
-	if vida == 1:
-		vida -= damage
-	if vida == 0:
-		queue_free()
+	vida -=damage
+	if vida == 0 :
+		$Animaciones.play("Muerte")
 
 func _process(_delta):
 	var mouse_pos = get_global_mouse_position()
 	var direccion = (mouse_pos - global_position).angle()  # Ángulo hacia el mouse
 	linterna.rotation = direccion
+@onready var sprite: AnimatedSprite2D = $Animaciones
+
+# Escalas personalizadas por animación
+var animation_scales := {
+	"Idle": Vector2(1, 1),
+	"Run": Vector2(1, 1),
+	"Muerte": Vector2(0.5, 0.5),
+	"Dash": Vector2(0.22, 0.22),
+}
+
+func _on_animation_changed():
+	var current_anim = sprite.animation
+	if animation_scales.has(current_anim):
+		sprite.scale = animation_scales[current_anim]
+	else:
+		sprite.scale = Vector2(1, 1) # valor por defecto
+
+func _on_animaciones_animation_finished() -> void:
+	if sprite.animation== "Muerte":
+		queue_free()
+	pass # Replace with function body.
