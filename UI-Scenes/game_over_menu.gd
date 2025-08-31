@@ -8,13 +8,11 @@ extends CanvasLayer
 var is_win: bool = false
 
 func _ready():
-	
-	# Hide the menu initially
 	hide()
 
 func show_game_over(win: bool):
 	is_win = win
-	get_tree().paused=true	
+	
 	if win:
 		result_label.text = "YOU WIN!"
 		result_label.modulate = Color.GREEN

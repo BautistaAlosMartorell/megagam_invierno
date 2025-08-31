@@ -1,34 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmvq5adh21x63"]
+[gd_scene load_steps=7 format=3 uid="uid://df716dlxdkyxv"]
 
-[ext_resource type="Script" uid="uid://becc18wlsmcji" path="res://UI-Scenes/main_menu.gd" id="1_ya61g"]
-[ext_resource type="Texture2D" uid="uid://c4ji8lj17vvdo" path="res://assets/img/background/mainMenuBackground.jpg" id="2_8q4q5"]
+[ext_resource type="Script" uid="uid://becc18wlsmcji" path="res://UI-Scenes/main_menu.gd" id="1_g8o5d"]
+[ext_resource type="Texture2D" uid="uid://c0eomnm005ktk" path="res://assets/img/background/menuBackground.png" id="2_1f6it"]
+[ext_resource type="Texture2D" uid="uid://tbynjv5eehxm" path="res://assets/img/menu/minas.png" id="3_3b7mt"]
+[ext_resource type="Texture2D" uid="uid://cisf3xfkycrhk" path="res://assets/img/menu/submarino.png" id="4_ul5c3"]
+[ext_resource type="Texture2D" uid="uid://c0rklq415kt1d" path="res://assets/img/menu/texto.png" id="5_28aud"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edvga"]
-texture = ExtResource("2_8q4q5")
-modulate_color = Color(0.473976, 0.473976, 0.473976, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edvga"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya61g"]
-bg_color = Color(0.226708, 0.226707, 0.226707, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q4q5"]
-bg_color = Color(0.144063, 0.144063, 0.144062, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edvga"]
-bg_color = Color(0.176419, 0.176419, 0.176419, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+texture = ExtResource("2_1f6it")
 
 [node name="ScMainMenu" type="Control"]
 layout_mode = 3
@@ -37,7 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ya61g")
+script = ExtResource("1_g8o5d")
 
 [node name="PNL_Background" type="Panel" parent="."]
 layout_mode = 1
@@ -48,55 +27,56 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_edvga")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Mines" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -135.0
-offset_right = 75.0
-offset_bottom = -10.0
+offset_right = 4854.0
+offset_bottom = 2730.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 10
+grow_vertical = 2
+scale = Vector2(0.0901401, 0.0900906)
+texture = ExtResource("3_3b7mt")
 
-[node name="TXTR_Logo" type="TextureRect" parent="VBoxContainer"]
+[node name="Submarine" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 5334.0
+offset_bottom = 3000.0
+scale = Vector2(0.0898463, 0.0900073)
+texture = ExtResource("4_ul5c3")
+
+[node name="TextTitles" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.0900998, 0.0903708)
+texture = ExtResource("5_28aud")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 134.0
+offset_right = 353.0
+offset_bottom = 174.0
+scale = Vector2(1.30389, 0.889065)
+theme_override_constants/separation = 32
+
+[node name="BtnOptions" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
+mouse_default_cursor_shape = 2
+flat = true
 
-[node name="BT_Play" type="Button" parent="VBoxContainer"]
+[node name="BtnPlay" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
-text = "PLAY"
-icon_alignment = 1
+mouse_default_cursor_shape = 2
+flat = true
 
-[node name="BT_Options" type="Button" parent="VBoxContainer"]
+[node name="BtnExit" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
-text = "OPTIONS"
-icon_alignment = 1
-
-[node name="BT_Exit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxEmpty_edvga")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ya61g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8q4q5")
-theme_override_styles/normal = SubResource("StyleBoxFlat_edvga")
-text = "EXIT
-"
-icon_alignment = 1
-
-[connection signal="pressed" from="VBoxContainer/BT_Play" to="." method="_on_bt_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/BT_Options" to="." method="_on_bt_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/BT_Exit" to="." method="_on_bt_exit_pressed"]
+mouse_default_cursor_shape = 2
+flat = true
