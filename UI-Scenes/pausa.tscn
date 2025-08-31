@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwgj21cpxqyfx"]
 
-[ext_resource type="Script" uid="uid://dooi47lr85r5v" path="res://pausa.gd" id="1_wk6u8"]
+[ext_resource type="Script" uid="uid://dooi47lr85r5v" path="res://UI-Scenes/pausa.gd" id="1_8pynk"]
 
 [node name="Pausa" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_wk6u8")
+script = ExtResource("1_8pynk")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
