@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cdkahws0fyn24" path="res://PlayerTest/OxygenComponent.tscn" id="4_1gl61"]
 [ext_resource type="PackedScene" uid="uid://cwgj21cpxqyfx" path="res://UI-Scenes/pausa.tscn" id="6_gug6g"]
 [ext_resource type="PackedScene" uid="uid://cuqciq6eh3ysg" path="res://PlayerTest/Oxygen/oxygenGenerator/oxygen_generator.tscn" id="6_s1m4t"]
-[ext_resource type="Script" path="res://scripts/obstacle_spawner.gd" id="7_af5hs"]
-[ext_resource type="PackedScene" uid="uid://cdjl8jv4nul11" path="res://PerderOGanar.tscn" id="7_gug6g"]
-[ext_resource type="PackedScene" uid="uid://bjkve75p5fdn" path="res://OpcionesArreglado.tscn" id="8_af5hs"]
+[ext_resource type="Script" uid="uid://c3h0amtgr48wo" path="res://scripts/obstacle_spawner.gd" id="7_af5hs"]
+[ext_resource type="PackedScene" path="res://PerderOGanar.tscn" id="7_gug6g"]
+[ext_resource type="PackedScene" path="res://OpcionesArreglado.tscn" id="8_af5hs"]
 [ext_resource type="PackedScene" uid="uid://bmsb7mp6ivq1g" path="res://Scenas/mina.tscn" id="8_k15po"]
 
 [node name="main" type="Node"]
@@ -17,7 +17,7 @@
 layer = -3
 
 [node name="Player" parent="." instance=ExtResource("2_urld1")]
-position = Vector2(84, 120)
+position = Vector2(224, 128)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(156, 15)
@@ -50,5 +50,7 @@ position = Vector2(547, 206)
 
 [node name="Perder_ganar" parent="." instance=ExtResource("7_gug6g")]
 process_mode = 3
+visible = false
 
 [node name="Opciones" parent="." instance=ExtResource("8_af5hs")]
+visible = false
