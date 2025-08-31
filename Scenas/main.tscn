@@ -8,11 +8,16 @@
 
 [node name="main" type="Node"]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-top_level = true
-color = Color(0, 0, 0, 1)
-
 [node name="background" parent="." instance=ExtResource("1_ue5qb")]
+layer = -3
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.054902, 0.054902, 0.054902, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_urld1")]
 position = Vector2(84, 120)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://citkokw2rkjav"]
+[gd_scene load_steps=150 format=3 uid="uid://citkokw2rkjav"]
 
 [ext_resource type="Script" uid="uid://bkk7k1rg8a648" path="res://Scenas/Player/player.gd" id="1_xadjt"]
 [ext_resource type="Texture2D" uid="uid://dqyp8dt2jqbw4" path="res://SpriteMomentaneos/IDLE.png" id="2_qvi3k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8an3v5t1ccmp" path="res://Buzo/buzo2.png" id="3_ucnwl"]
 [ext_resource type="Texture2D" uid="uid://bjwq7rup4kgme" path="res://assets/Linterna/Flashlight texture.jpg" id="4_85tje"]
 [ext_resource type="Texture2D" uid="uid://c0y0tcmp00vl0" path="res://assets/Linterna/xd.webp" id="4_l580j"]
+[ext_resource type="Material" uid="uid://cuh2kq2n50fpb" path="res://assets/Linterna/Lol.tres" id="6_yn75r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd8k4"]
 atlas = ExtResource("2_qvi3k")
@@ -1014,23 +1015,28 @@ script = ExtResource("1_xadjt")
 [node name="Animaciones" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8q6c7")
 animation = &"Muerte"
-frame_progress = 0.0818157
+frame_progress = 0.0196604
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_5cvsc")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Pivot" type="Node2D" parent="."]
 position = Vector2(3, 17)
 
-[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+[node name="PointLight2D" type="PointLight2D" parent="Pivot"]
 position = Vector2(262.99, 0.905)
 rotation = -1.5708
 color = Color(0.42744, 0.553143, 0.646168, 1)
-energy = 1.5
-blend_mode = 2
-range_z_max = 299
+energy = 2.0
+range_z_min = 0
+range_z_max = 50
+range_item_cull_mask = 31
 texture = ExtResource("4_85tje")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Pivot"]
+material = ExtResource("6_yn75r")
+max_distance = 4477.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, 16.46)

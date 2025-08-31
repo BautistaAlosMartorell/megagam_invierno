@@ -13,7 +13,7 @@ func _ready():
 	player = get_node(player_path)
 	randomize()
 
-func _process(delta):
+func _process(_delta):
 	if not player:
 		return
 

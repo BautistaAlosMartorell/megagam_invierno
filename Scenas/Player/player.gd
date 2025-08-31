@@ -15,7 +15,7 @@ var can_dash: bool = true
 const TOP_Y := 37.0    # techo visible
 const BOTTOM_Y := 235.0  # piso visible
 
-@onready var linterna = $Node2D
+@onready var linterna = $Pivot
 
 func _physics_process(delta: float) -> void:
 	# Movimiento y dash
