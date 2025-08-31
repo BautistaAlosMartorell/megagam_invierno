@@ -1,10 +1,12 @@
 extends Control
 
-@onready var options_menu = $OptionsMenu
+@onready var options_menu = $SettingsTabContainer
+@onready var v_box_container: VBoxContainer = $VBoxContainer
+
 
 func _ready():
 	# Create options menu instance
-	var options_scene = preload("res://UI-Scenes/SC_OptionsMenu.tscn")
+	var options_scene = preload("res://UI-Scenes/settings_tab_container.tscn")
 	options_menu = options_scene.instantiate()
 	add_child(options_menu)
 	options_menu.hide()
@@ -19,6 +21,7 @@ func _on_bt_play_pressed() -> void:
 
 func _on_bt_options_pressed() -> void:
 	options_menu.show()
+	v_box_container.hide()
 
 
 func _on_bt_exit_pressed() -> void:
@@ -26,3 +29,4 @@ func _on_bt_exit_pressed() -> void:
 
 func _on_options_back_pressed():
 	options_menu.hide()
+	v_box_container.show()

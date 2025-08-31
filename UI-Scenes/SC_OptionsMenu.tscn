@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqx8y7n2m3k4p"]
-
-[ext_resource type="Script" uid="uid://juxu2s8s65h0" path="res://UI-Scenes/options_menu.gd" id="1_options"]
+[gd_scene load_steps=5 format=3 uid="uid://bqx8y7n2m3k4p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
 bg_color = Color(0.226708, 0.226707, 0.226707, 1)
@@ -37,7 +35,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_options")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -56,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -200.0
+offset_top = -128.5
 offset_right = 200.0
-offset_bottom = 200.0
+offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -99,10 +96,17 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -55.0
+offset_right = 98.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
