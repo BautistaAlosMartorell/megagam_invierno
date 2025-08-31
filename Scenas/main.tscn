@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=14 format=3 uid="uid://dxansfn1umllu"]
+
 
 [ext_resource type="Script" uid="uid://d2q8fr2uo0y0f" path="res://scripts/main.gd" id="1_iw5vi"]
 [ext_resource type="PackedScene" uid="uid://dxp430o88m6tf" path="res://Scenas/background.tscn" id="1_ue5qb"]
@@ -13,6 +15,7 @@
 [ext_resource type="PackedScene" path="res://OpcionesArreglado.tscn" id="8_af5hs"]
 [ext_resource type="PackedScene" uid="uid://bmsb7mp6ivq1g" path="res://Scenas/mina.tscn" id="8_k15po"]
 [ext_resource type="PackedScene" uid="uid://cpcwcpl6alokl" path="res://Scenas/huid.tscn" id="12_wp5hg"]
+
 
 [node name="main" type="Node"]
 script = ExtResource("1_iw5vi")
@@ -49,6 +52,7 @@ spawn_area_size = Vector2(250, 250)
 spawn_offset = Vector2(200, 0)
 
 [node name="Pausa" parent="." instance=ExtResource("6_gug6g")]
+visible = false
 
 [node name="ObstacleSpawner" type="Node2D" parent="."]
 position = Vector2(84, 120)
@@ -61,7 +65,13 @@ position = Vector2(547, 206)
 process_mode = 3
 visible = false
 
+[node name="MainMenu" parent="." instance=ExtResource("11_iw5vi")]
+
 [node name="Opciones" parent="." instance=ExtResource("8_af5hs")]
 visible = false
 
+
+[editable path="MainMenu"]
+
 [node name="HUID" parent="." instance=ExtResource("12_wp5hg")]
+

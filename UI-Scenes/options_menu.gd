@@ -34,9 +34,9 @@ func _on_volume_slider_changed(value: float):
 	config.save("user://settings.cfg")
 
 func _on_back_button_pressed():
+	$"../MainMenu/MainMenuHolder".show()
+	$"../Opciones".hide()
 	# Hide this menu and return to previous menu
-	hide()
-	$"../Pausa".show()
 	# If we came from pause menu, show it again
 	# If we came from main menu, show it again
 	# This will be handled by the calling menu
