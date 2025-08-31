@@ -8,7 +8,7 @@ layer = -2
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 light_mask = 1023
 motion_scale = Vector2(0.6, 0.6)
-motion_mirroring = Vector2(7820, 0)
+motion_mirroring = Vector2(2890, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 show_behind_parent = true
