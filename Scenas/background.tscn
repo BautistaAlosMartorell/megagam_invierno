@@ -16,7 +16,7 @@ motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(2890, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-modulate = Color(0.243569, 0.243569, 0.243569, 1)
+modulate = Color(0.453232, 0.453232, 0.453232, 1)
 show_behind_parent = true
 light_mask = 1023
 visibility_layer = 1023
@@ -25,3 +25,8 @@ position = Vector2(0, 1)
 scale = Vector2(0.371333, 0.372531)
 texture = ExtResource("2_4xl8w")
 centered = false
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer/Sprite2D"]
+offset_right = 1298.0
+offset_bottom = 717.0
+color = Color(0.0823529, 0.0823529, 0.0823529, 0.258824)
