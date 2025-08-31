@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxansfn1umllu"]
+[gd_scene load_steps=15 format=3 uid="uid://dxansfn1umllu"]
 
 [ext_resource type="Script" uid="uid://d2q8fr2uo0y0f" path="res://scripts/main.gd" id="1_iw5vi"]
 [ext_resource type="PackedScene" uid="uid://dxp430o88m6tf" path="res://Scenas/background.tscn" id="1_ue5qb"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cwgj21cpxqyfx" path="res://UI-Scenes/pausa.tscn" id="6_gug6g"]
 [ext_resource type="PackedScene" uid="uid://cuqciq6eh3ysg" path="res://PlayerTest/Oxygen/oxygenGenerator/oxygen_generator.tscn" id="6_s1m4t"]
 [ext_resource type="Script" uid="uid://c3h0amtgr48wo" path="res://scripts/obstacle_spawner.gd" id="7_af5hs"]
-[ext_resource type="PackedScene" path="res://PerderOGanar.tscn" id="7_gug6g"]
-[ext_resource type="PackedScene" path="res://OpcionesArreglado.tscn" id="8_af5hs"]
 [ext_resource type="PackedScene" uid="uid://bmsb7mp6ivq1g" path="res://Scenas/mina.tscn" id="8_k15po"]
+[ext_resource type="PackedScene" uid="uid://cdjl8jv4nul11" path="res://UI-Scenes/PerderOGanar.tscn" id="11_ekhp2"]
+[ext_resource type="PackedScene" uid="uid://bjkve75p5fdn" path="res://UI-Scenes/OpcionesArreglado.tscn" id="12_fpv8x"]
 [ext_resource type="PackedScene" uid="uid://cpcwcpl6alokl" path="res://Scenas/huid.tscn" id="12_wp5hg"]
+[ext_resource type="PackedScene" uid="uid://sgw3b26kq8r5" path="res://UI-Scenes/MainMenuUpdated.tscn" id="14_fpv8x"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_iw5vi")
@@ -49,6 +50,7 @@ spawn_area_size = Vector2(250, 250)
 spawn_offset = Vector2(200, 0)
 
 [node name="Pausa" parent="." instance=ExtResource("6_gug6g")]
+visible = false
 
 [node name="ObstacleSpawner" type="Node2D" parent="."]
 position = Vector2(84, 120)
@@ -57,11 +59,16 @@ script = ExtResource("7_af5hs")
 [node name="Mina" parent="." instance=ExtResource("8_k15po")]
 position = Vector2(547, 206)
 
-[node name="Perder_ganar" parent="." instance=ExtResource("7_gug6g")]
-process_mode = 3
-visible = false
-
-[node name="Opciones" parent="." instance=ExtResource("8_af5hs")]
+[node name="Perder_ganar" parent="." instance=ExtResource("11_ekhp2")]
 visible = false
 
 [node name="HUID" parent="." instance=ExtResource("12_wp5hg")]
+
+[node name="MainMenu" parent="." instance=ExtResource("14_fpv8x")]
+process_mode = 3
+process_priority = 2
+
+[node name="Opciones" parent="." instance=ExtResource("12_fpv8x")]
+visible = false
+
+[editable path="MainMenu"]

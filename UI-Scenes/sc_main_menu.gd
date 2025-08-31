@@ -2,6 +2,7 @@ extends CanvasLayer
 #@onready var v_box_container: VBoxContainer = $VBoxContainer
 
 func _ready():
+	get_tree().paused
 	pass
 	# Create options menu instance
 	
@@ -9,7 +10,8 @@ func _ready():
 
 
 func _on_btn_options_pressed() -> void:
-	$"MainMenuHolder".hide()
+	get_tree().paused
+	$MainMenuHolder.hide()
 	$"../Opciones".show()
 
 

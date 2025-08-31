@@ -177,7 +177,7 @@ func RestarVida():
 	if sprite: sprite.stop()
 	if hitbox:
 		hitbox.monitoring = false
-		hitbox.monitorable = false
+		hitbox.set_deferred("monitorable", false)
 
 	# Desvanecerse mientras se hunde (el hundimiento lo hace _physics_process)
 	var tw := create_tween()

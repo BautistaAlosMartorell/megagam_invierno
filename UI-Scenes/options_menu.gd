@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var back_button = $BackButton
 
 func _ready():
+	get_tree().paused
 	hide()
 	# Load saved volume setting
 	var config = ConfigFile.new()

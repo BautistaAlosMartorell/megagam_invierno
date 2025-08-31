@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var restart_button = $VBoxContainer/RestartButton
-@onready var main_menu_button = $VBoxContainer/MainMenuButton
-@onready var exit_button = $VBoxContainer/ExitButton
+@onready var restart_button = $VBoxContainer/VBoxContainer/RestartButton
+@onready var main_menu_button = $VBoxContainer/VBoxContainer/MainMenuButton
+@onready var exit_button = $VBoxContainer/VBoxContainer/ExitButton
 @onready var result_label = $VBoxContainer/ResultLabel
 
 var is_win: bool = false

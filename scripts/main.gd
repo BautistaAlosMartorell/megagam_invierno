@@ -42,6 +42,7 @@ const SAVE_SECTION := "stats"
 const SAVE_KEY := "high_score"
 
 func _ready() -> void:
+	get_tree().paused
 	player  = get_node_or_null("Player")
 	spawner = get_node_or_null("ObstacleSpawner")
 	kraken  = get_node_or_null("Kraken")
