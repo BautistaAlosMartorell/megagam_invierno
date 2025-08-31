@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://citkokw2rkjav"]
+[gd_scene load_steps=125 format=3 uid="uid://citkokw2rkjav"]
 
 [ext_resource type="Script" uid="uid://bkk7k1rg8a648" path="res://Scenas/Player/player.gd" id="1_xadjt"]
 [ext_resource type="Texture2D" uid="uid://dqyp8dt2jqbw4" path="res://SpriteMomentaneos/IDLE.png" id="2_qvi3k"]
@@ -832,6 +832,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cvsc"]
 size = Vector2(20, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn75r"]
+size = Vector2(13, 28)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xadjt")
 
@@ -862,5 +865,12 @@ scale = Vector2(0.2, 0.2)
 color = Color(0.427451, 0.552941, 0.647059, 1)
 energy = 1.5
 texture = ExtResource("4_l580j")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 17)
+shape = SubResource("RectangleShape2D_yn75r")
+debug_color = Color(0.988703, 0, 0.298979, 0.42)
 
 [connection signal="animation_finished" from="Animaciones" to="." method="_on_animaciones_animation_finished"]
