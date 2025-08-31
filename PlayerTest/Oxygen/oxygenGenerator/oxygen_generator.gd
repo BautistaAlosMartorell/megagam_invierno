@@ -27,7 +27,7 @@ func try_spawn_item() -> void:
 	while attempts < max_attempts:
 		attempts += 1
 		var item = oxygen_item_scene.instantiate()
-		print("intento de objeto")
+		
 		# Posición aleatoria relativa al generador
 		var offset = Vector2(
 			randf_range(-spawn_area_size.x / 2, spawn_area_size.x / 2),
@@ -41,11 +41,11 @@ func try_spawn_item() -> void:
 		# Comprobar colisiones
 		if item is Area2D and item.get_overlapping_bodies().is_empty():
 			print(item.position)
-			print("exito")
+			
 			return  # Éxito
 		else:
 			item.queue_free()  # Falló, reintentar
-			print("fracaso")
+			
 
 
 func _on_timer_timeout() -> void:

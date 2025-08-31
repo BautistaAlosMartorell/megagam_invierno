@@ -6,7 +6,7 @@ var vida: int = 1
 var dash_speed: float = 300
 var dash_duration: float = 0.5
 var dash_cooldown: float = 1
-
+var esta_Vivo: bool= true
 var is_dashing: bool = false
 var dash_time: float = 0
 var dash_direction: Vector2 = Vector2.ZERO
@@ -19,6 +19,7 @@ const BOTTOM_Y := 235.0  # piso visible
 func _ready() -> void:
 	add_to_group("Player")
 	sprite.animation_changed.connect(_on_animation_changed)
+	sprite.animation_finished.connect(_on_animation_finished)
 func _physics_process(delta: float) -> void:
 	# Movimiento y dash
 	if is_dashing:
@@ -58,52 +59,52 @@ func start_dash(input_dir: Vector2):
 	can_dash = false
 	await get_tree().create_timer(dash_cooldown).timeout
 	can_dash = true
-
 func Decidir_Animaciones():
-	if velocity.x == 0: 
+	if velocity.x == 0 and esta_Vivo==true: 
 		$Animaciones.play("Idle")
-	elif velocity.x < 0: 
+	elif velocity.x < 0 and esta_Vivo==true: 
 		$Animaciones.flip_h = true	
 		$Animaciones.play("Run")
-	elif velocity.x > 0: 
+	elif velocity.x > 0 and esta_Vivo==true: 
 		$Animaciones.flip_h = false	
 		$Animaciones.play("Run")
-	if velocity.y < 0:
+	if velocity.y < 0 and esta_Vivo==true:
 		$Animaciones.play("Run")
-	elif velocity.y > 0: 
+	elif velocity.y > 0 and esta_Vivo==true: 
 		$Animaciones.play("Run")
-	elif is_dashing==true:
-		$Animaciones.speed_scale=dash_duration
+	elif is_dashing==true and esta_Vivo==true :
+		$Animaciones.speed_scale=1
 		$Animaciones.play("Dash")
-
-
-func RestarVida(damage: int):
-	vida -=damage
-	if vida == 0 :
+	if esta_Vivo==false :
+		$Animaciones.speed_scale=2
 		$Animaciones.play("Muerte")
 
+func RestarVida():
+	esta_Vivo=false
+	Decidir_Animaciones()
+	print("murio")
+	
 func _process(_delta):
 	var mouse_pos = get_global_mouse_position()
 	var direccion = (mouse_pos - global_position).angle()  # Ángulo hacia el mouse
 	linterna.rotation = direccion
 @onready var sprite: AnimatedSprite2D = $Animaciones
 
-# Escalas personalizadas por animación
 var animation_scales := {
 	"Idle": Vector2(1, 1),
 	"Run": Vector2(1, 1),
-	"Muerte": Vector2(0.5, 0.5),
+	"Muerte": Vector2(0.35, 0.35),
 	"Dash": Vector2(0.22, 0.22),
 }
-
 func _on_animation_changed():
+	
 	var current_anim = sprite.animation
 	if animation_scales.has(current_anim):
 		sprite.scale = animation_scales[current_anim]
 	else:
 		sprite.scale = Vector2(1, 1) # valor por defecto
 
-func _on_animaciones_animation_finished() -> void:
-	if sprite.animation== "Muerte":
-		queue_free()
 	pass # Replace with function body.
+func _on_animation_finished():
+	if sprite.animation== "Muerte":
+		queue_free() 

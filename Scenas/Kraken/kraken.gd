@@ -11,5 +11,5 @@ func _physics_process(_delta):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		$"../Player".RestarVida(1)
+		$"../Player".RestarVida()
 		print("DetecteAlPlayer")
