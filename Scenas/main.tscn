@@ -1,24 +1,30 @@
-[gd_scene load_steps=12 format=3 uid="uid://dxansfn1umllu"]
 
+[gd_scene load_steps=14 format=3 uid="uid://dxansfn1umllu"]
+
+
+[ext_resource type="Script" uid="uid://d2q8fr2uo0y0f" path="res://scripts/main.gd" id="1_iw5vi"]
 [ext_resource type="PackedScene" uid="uid://dxp430o88m6tf" path="res://Scenas/background.tscn" id="1_ue5qb"]
 [ext_resource type="PackedScene" uid="uid://citkokw2rkjav" path="res://Scenas/Player/player.tscn" id="2_urld1"]
 [ext_resource type="PackedScene" uid="uid://dgp8uiqqqajrq" path="res://Scenas/Kraken/kraken.tscn" id="3_urld1"]
 [ext_resource type="PackedScene" uid="uid://cdkahws0fyn24" path="res://PlayerTest/OxygenComponent.tscn" id="4_1gl61"]
+[ext_resource type="AudioStream" uid="uid://dbrhcpxabamgt" path="res://Sonidos/Jam2.ogg" id="4_iw5vi"]
 [ext_resource type="PackedScene" uid="uid://cwgj21cpxqyfx" path="res://UI-Scenes/pausa.tscn" id="6_gug6g"]
 [ext_resource type="PackedScene" uid="uid://cuqciq6eh3ysg" path="res://PlayerTest/Oxygen/oxygenGenerator/oxygen_generator.tscn" id="6_s1m4t"]
 [ext_resource type="Script" uid="uid://c3h0amtgr48wo" path="res://scripts/obstacle_spawner.gd" id="7_af5hs"]
-[ext_resource type="PackedScene" uid="uid://cdjl8jv4nul11" path="res://UI-Scenes/PerderOGanar.tscn" id="7_gug6g"]
-[ext_resource type="PackedScene" uid="uid://bjkve75p5fdn" path="res://UI-Scenes/OpcionesArreglado.tscn" id="8_af5hs"]
+[ext_resource type="PackedScene" path="res://PerderOGanar.tscn" id="7_gug6g"]
+[ext_resource type="PackedScene" path="res://OpcionesArreglado.tscn" id="8_af5hs"]
 [ext_resource type="PackedScene" uid="uid://bmsb7mp6ivq1g" path="res://Scenas/mina.tscn" id="8_k15po"]
-[ext_resource type="PackedScene" uid="uid://sgw3b26kq8r5" path="res://UI-Scenes/MainMenuUpdated.tscn" id="11_iw5vi"]
+[ext_resource type="PackedScene" uid="uid://cpcwcpl6alokl" path="res://Scenas/huid.tscn" id="12_wp5hg"]
+
 
 [node name="main" type="Node"]
+script = ExtResource("1_iw5vi")
 
 [node name="background" parent="." instance=ExtResource("1_ue5qb")]
 layer = -3
 
 [node name="Player" parent="." instance=ExtResource("2_urld1")]
-position = Vector2(84, 120)
+position = Vector2(464, 132)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(156, 15)
@@ -29,9 +35,14 @@ limit_bottom = 9
 
 [node name="OxygenComponent" parent="Player/CanvasLayer" instance=ExtResource("4_1gl61")]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("4_iw5vi")
+volume_db = 3.5
+autoplay = true
+
 [node name="Kraken" parent="." instance=ExtResource("3_urld1")]
 z_index = 12
-position = Vector2(0, 1)
+position = Vector2(28, -20)
 
 [node name="ObstaceSpawner" type="Node2D" parent="."]
 
@@ -59,4 +70,8 @@ visible = false
 [node name="Opciones" parent="." instance=ExtResource("8_af5hs")]
 visible = false
 
+
 [editable path="MainMenu"]
+
+[node name="HUID" parent="." instance=ExtResource("12_wp5hg")]
+
